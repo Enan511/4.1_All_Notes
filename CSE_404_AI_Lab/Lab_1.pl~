@@ -1,0 +1,11 @@
+male(d).
+male(p).
+
+mortal(X) :- man(X).
+
+female(m).
+female(s).
+man(socrates).
+man(dipu).
+man(lima).
+
