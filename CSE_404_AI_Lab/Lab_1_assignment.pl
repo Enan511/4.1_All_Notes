@@ -1,39 +1,39 @@
-couple(grandfather,grandmother).
-couple(mizan,rawshan).
-couple(kashem,salma).
+spouse(motaleb,moriom).
+spouse(mizan,rawshan).
+spouse(kashem,salma).
+spouse(rashik,mariam).
+spouse(shohan,nawring).
+spouse(mahin,mow).
+spouse(shamim,sharmin).
 
-father(grandfather,mizan).
-father(grandfather,kashem).
+father(motaleb,mizan).
+father(motaleb,kashem).
 father(mizan,rashik).
 father(mizan,nakiba).
 father(kashem,shohan).
-father(kashem,maliha).
+father(rashik,mahin).
+father(shohan,shamim).
+father(mahin,mugdho).
+father(shamim,athoi).
 
-mother(grandmother,mizan).
-mother(grandmother,kashem).
-mother(rawshan,rashik).
-mother(rawshan,nakiba).
-mother(salma,shohan).
-mother(salma,maliha).
 
-/*query : sibling(rashik,nakiba).*/
-sibling(X,Y) :- father(W,X),
-                father(T,Y),
-                W==T,
-                format('~w and ~w are siblings. ~n',[X,Y]).
+/*grandfather(X,Y).*/
+grandfather(X,Z):- father(X,Y), father(Y,Z), format('~w is grandfather of ~w. ~n',[X,Z]).
 
-/*query : cousin(rashik,shohan).*/
-cousin(X,Y) :- father(W,X),
-               father(T,Y),
-               sibling(W,T),
-               format('~w is cousin of ~w. ~n',[X,Y]).
+/*sibling(X,Y).*/
+sibling(X,Y) :- father(Z,X), father(Z,Y),X\=Y, format('~w and ~w are siblings. ~n',[X,Y]).
 
-/*query : grandchild(grandfather,rashik).*/
-grandchild(X,Y) :- father(Who,Y),
-                   father(X,Who),
-                   format('~w is grandchild of ~w. ~n',[Y,X]).
+/*first_cousin(X,Y).*/
+first_cousin(X,Y) :- father(Z,X), father(W,Y),X\=Y,Z\=W,sibling(Z,W), format('~w and ~w are first cousins. ~n',[X,Y]).
 
-/*query : daughter_in_law(rawshan,grandfather).*/
-daughter_in_law(F,M) :- couple(Who,F),
-                        father(M,Who),
-                        format('~w is daughter in law of ~w. ~n',[F,M]).
+/*second_cousin(X,Y).*/
+second_cousin(X,Y) :- father(Z,X), father(W,Y),X\=Y,Z\=W,first_cousin(Z,W), format('~w and ~w are second cousins. ~n',[X,Y]).
+
+/*third_cousin(X,Y).*/
+third_cousin(X,Y) :- grandfather(Z,X), grandfather(W,Y),X\=Y,Z\=W,first_cousin(Z,W), format('~w and ~w are second cousins. ~n',[X,Y]).
+
+/*first_cousin_once_removed(X,Y).*/
+first_cousin_once_removed(X,Y):- father(Z,Y), first_cousin(X,Z), X\=Y, format('Afther removing 1st cousin once').
+
+/*first_cousin_twice_removed(X,Y).*/
+first_cousin_twice_removed(X,Y):- grandfather(Z,Y), first_cousin(X,Z), X\=Y, format('Afther removing 1st cousin twice').
