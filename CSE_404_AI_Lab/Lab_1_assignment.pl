@@ -6,6 +6,8 @@ spouse(shohan,nawring).
 spouse(mahin,mow).
 spouse(shamim,sharmin).
 
+
+
 father(motaleb,mizan).
 father(motaleb,kashem).
 father(mizan,rashik).
@@ -15,6 +17,7 @@ father(rashik,mahin).
 father(shohan,shamim).
 father(mahin,mugdho).
 father(shamim,athoi).
+
 
 
 /*grandfather(X,Y).*/
