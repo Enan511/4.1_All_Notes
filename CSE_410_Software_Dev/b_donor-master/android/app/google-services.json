@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "699277990292",
+    "firebase_url": "https://b-donor-b4c3b.firebaseio.com",
+    "project_id": "b-donor-b4c3b",
+    "storage_bucket": "b-donor-b4c3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699277990292:android:f1a8d928ec902825195781",
+        "android_client_info": {
+          "package_name": "com.pirox.organize_flutter_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699277990292-5g5s0bp54b0dapqgqh2ncjshtht155r5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pirox.organize_flutter_project",
+            "certificate_hash": "dc327522db53d4305604009f3049d29a137035c6"
+          }
+        },
+        {
+          "client_id": "699277990292-itmtlpi3pnpkbe76qrimtveqaeno0ugu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pirox.organize_flutter_project",
+            "certificate_hash": "ccfdf09c1b3a32a340604ad01052df1dde5fc69f"
+          }
+        },
+        {
+          "client_id": "699277990292-8lnhi962ctjd8pkncrp62repfk65giv8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhpCSFXjpcWjWA-3ZuBLZsg9AvzFiC6XU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699277990292-8lnhi962ctjd8pkncrp62repfk65giv8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
